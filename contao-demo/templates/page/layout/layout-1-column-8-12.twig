@@ -1,0 +1,77 @@
+{% extends "@Contao/page/layout.html.twig" %}
+
+{%- set body_attributes = attrs()
+    .addClass('layout--1-column-8-12')
+    .mergeWith(body_attributes|default)
+-%}
+
+{% block end_of_head %}
+    {{ parent() }}
+    <link rel="stylesheet" href="{{ asset('contaodemo/files_contaodemo_theme_src_scss_app.scss.css', 'contao_vfs.files') }}">
+    <script src="{{ asset('js/jquery.js', 'contao-components/jquery') }}"></script>
+{% endblock %}
+
+{% block body %}
+    {{ parent() }}
+    {{ include('@Contao/j_accordion.html.twig') }}
+    {{ include('@Contao/j_colorbox.html.twig') }}
+    {{ include('@Contao/j_tablesort.html.twig') }}
+
+    {{ include('@Contao/js_slider.html.twig') }}
+    {{ include('@Contao/js_autofocus') }}
+{% endblock %}
+
+{% block body_content %}
+<div id="wrapper">
+    {% slot header %}
+        <header id="header">
+            <div class="inside">
+                {{ slot() }}
+            </div>
+        </header>
+    {% endslot %}
+
+    {% slot sub_header %}
+        <div id="sub-header">
+            <div class="inside">
+                {{ slot() }}
+            </div>
+        </div>
+    {% endslot %}
+
+    {% slot main %}
+    <div id="container">
+        <main id="main">
+            <div class="inside">
+                {{ slot() }}
+            </div>
+        </main>
+    </div>
+    {% endslot %}
+
+    {% slot footer %}
+        <footer id="footer">
+            <div class="inside">
+                {{ slot() }}
+            </div>
+        </footer>
+    {% endslot %}
+</div>
+{% endblock %}
+
+{% block end_of_body %}
+    <script src="{{ asset('files/contaodemo/theme/src/js/scripts.js') }}"></script>
+    <script src="{{ asset('files/contaodemo/theme/src/js/a11y-nav.js') }}"></script>
+    <script>
+    	window.addEventListener('load', () => {
+    		new A11yNav({
+    			ariaLabels: {
+                    'main': 'Main menu',
+                    'expand': 'Expand menu: ',
+                    'collapse': 'Collapse menu: '
+                }
+    		});
+    	})
+    </script>
+    {{ parent() }}
+{% endblock %}
