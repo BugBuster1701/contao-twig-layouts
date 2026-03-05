@@ -10,3 +10,4 @@ Um nun nicht das CSS anpassen zu müssen werden hier die fehlenden DIVs und IDs 
 
 Außerdem werden notwendige JS und CSS Dateien eingebunden für Contao Componenten die verwendet werden.
 
+**Hinweis:** Ist noch in Arbeit, die restlichen Layout Varianten für die Contao Demo folgen noch.
