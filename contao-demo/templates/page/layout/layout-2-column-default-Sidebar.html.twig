@@ -1,7 +1,7 @@
 {% extends "@Contao/page/layout.html.twig" %}
 
 {%- set body_attributes = attrs()
-    .addClass('layout--1-column')
+    .addClass('layout--2-column')
     .mergeWith(body_attributes|default)
 -%}
 
@@ -31,6 +31,14 @@
         </header>
     {% endslot %}
 
+    {% slot sub_header %}
+        <div id="sub-header">
+            <div class="inside">
+                {{ slot() }}
+            </div>
+        </div>
+    {% endslot %}
+
     <div id="container">
     {% slot main %}
         <main id="main">
@@ -39,15 +47,14 @@
             </div>
         </main>
     {% endslot %}
-    </div>
-
-    {% slot prefooter %}
-        <div id="prefooter">
+    {% slot left %}
+        <aside id="left">
             <div class="inside">
                 {{ slot() }}
             </div>
-        </div>
+        </aside>
     {% endslot %}
+    </div>
 
     {% slot footer %}
         <footer id="footer">
@@ -75,3 +82,4 @@
     </script>
     {{ parent() }}
 {% endblock %}
+

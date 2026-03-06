@@ -31,23 +31,23 @@
         </header>
     {% endslot %}
 
-    <div id="container">
-    {% slot main %}
-        <main id="main">
-            <div class="inside">
-                {{ slot() }}
-            </div>
-        </main>
-    {% endslot %}
-    </div>
-
-    {% slot prefooter %}
-        <div id="prefooter">
+    {% slot sub_header %}
+        <div id="sub-header">
             <div class="inside">
                 {{ slot() }}
             </div>
         </div>
     {% endslot %}
+
+    <div id="container">
+        {% slot main %}
+        <main id="main">
+            <div class="inside">
+                {{ slot() }}
+            </div>
+        </main>
+        {% endslot %}
+    </div>
 
     {% slot footer %}
         <footer id="footer">

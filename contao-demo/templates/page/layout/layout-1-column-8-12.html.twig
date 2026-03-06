@@ -39,15 +39,16 @@
         </div>
     {% endslot %}
 
-    {% slot main %}
     <div id="container">
+    {% slot main %}
         <main id="main">
             <div class="inside">
                 {{ slot() }}
             </div>
         </main>
-    </div>
     {% endslot %}
+    </div>
+    
 
     {% slot footer %}
         <footer id="footer">
