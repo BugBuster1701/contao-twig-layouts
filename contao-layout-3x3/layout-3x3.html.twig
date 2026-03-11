@@ -1,0 +1,95 @@
+{% extends "@Contao/page/layout.html.twig" %}
+
+{%- set body_attributes = attrs()
+    .addClass('layout--3x3')
+    .mergeWith(body_attributes|default)
+-%}
+
+{% block end_of_head %}
+    {{ parent() }}
+    <style{{ attrs().setIfExists('nonce', csp_nonce('style-src')) }}>
+        #wrapper {
+            width: 1024px;
+            margin: 0 auto
+        }
+
+        #header {
+            height: 100px
+        }
+
+        #left {
+            width: 200px;
+            right: 200px
+        }
+
+        #right {
+            width: 150px
+        }
+
+        #container {
+            padding-left: 200px;
+            padding-right: 150px
+        }
+
+        #footer {
+            height: 50px
+        }
+    </style>
+    <link rel="stylesheet" href="{{ asset('layout.css', 'contao_vfs.files') }}">
+    <link rel="stylesheet" href="{{ asset('your_own.css', 'contao_vfs.files') }}">
+    {# <script src="{{ asset('js/jquery.js', 'contao-components/jquery') }}"></script> #}
+{% endblock %}
+
+{% block body %}
+    {{ parent() }}
+    {# {{ include('@Contao/j_accordion.html.twig') }} #}
+    {# {{ include('@Contao/j_colorbox.html.twig') }}  #}
+    {# {{ include('@Contao/j_tablesort.html.twig') }} #}
+
+    {# {{ include('@Contao/js_slider.html.twig') }} #}
+    {# {{ include('@Contao/js_autofocus') }} #}
+{% endblock %}
+
+{% block body_content %}
+<div id="wrapper">
+    {% slot header %}
+    <header id="header">
+        <div class="inside">
+            {{ slot() }}
+        </div>
+    </header>
+    {% endslot %}
+
+    <div id="container">
+    {% slot main %}
+        <main id="main">
+            <div class="inside">
+                {{ slot() }}
+            </div>
+        </main>
+    {% endslot %}
+    {% slot left %}
+        <aside id="left">
+            <div class="inside">
+                {{ slot() }}
+            </div>
+        </aside>
+    {% endslot %}
+    {% slot right %}
+        <aside id="right">
+            <div class="inside">
+                {{ slot() }}
+            </div>
+        </aside>
+    {% endslot %}
+    </div>
+
+    {% slot footer %}
+    <footer id="footer">
+        <div class="inside">
+            {{ slot() }}
+        </div>
+    </footer>
+    {% endslot %}
+</div>
+{% endblock %}
