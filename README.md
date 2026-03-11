@@ -2,7 +2,7 @@
 Beispiele von Page Layouts (Varianten) für Twig-Layout mit Slots.
 
 ## Verzeichnis contao-demo
-Speziell für Migration von Contao 4.13 nach 5.7 und Slots gedacht. 
+Speziell für Migration von Contao 4.13 nach 5.7 und Slots gedacht. (die auf die Demo basieren)
 
 Im mitgelieferten Page Layout von Contao 5.7 sind einige DIV Tags nicht mehr vorhanden.
 Um nun nicht das CSS anpassen zu müssen werden hier die fehlenden DIVs und IDs wieder eingefügt.
