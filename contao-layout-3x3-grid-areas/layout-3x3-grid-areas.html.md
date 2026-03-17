@@ -1,9 +1,12 @@
 # Layout Header-Main-Left-Right-Footer
 Es bildet das 3-Zeilen - 3 Spalten Layout nach als statisches Layout mit fester Breite und Ausrichtung.
 
+Der Unterschied zu contao-layout-3x3 ist, es kommt ohne die zusätzlichen DIV Tags aus (wrapper, container, inside).
+Dazu benutzt es grid-area Definitionen und arbeitet mit grid-template-columns, grid-template-rows usw.
+
 ![layout-3x3-grid-areas.png](./layout-3x3-grid-areas.png "layout-3x3-grid-areas.png")
 
-Die "layout-grid-areas.css" ist auf GitHub im Verzeichnis contao-css zu finden, wurde mir einigen wenigen Contao Elementen erweitert.
+Die "layout-grid-areas.css" ist auf GitHub im Verzeichnis contao-css zu finden, wurde mit einigen wenigen Contao Elementen erweitert.
 
 Im Twig sind einige Zeilen auskommentiert. Wer was davon braucht kann das dann aktivieren, einfach `{#` und `#}` entfernen.
 
