@@ -5,7 +5,7 @@ Die "layout.css" stammt von Contao und ist auf GitHub im Verzeichnis contao-css 
 
 Im Twig sind einige Zeilen auskommentiert. Wer was davon braucht kann das dann aktivieren, einfach `{#` und `#}` entfernen.
 
-**Hinweis:** Noch nicht getestet und auch noch nicht ganze fertig.
+**Hinweis:** Noch nicht getestet und auch noch nicht ganz fertig.
 ```
 <html>
 <head>
