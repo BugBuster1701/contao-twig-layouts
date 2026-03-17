@@ -17,5 +17,17 @@ Siehe: [Readme](contao-demo/templates/page/layout/README.md)
 Layout Header-Main-Left-Right-Footer
 
 Es bildet das 3-Zeilen - 3 Spalten Layout nach als statisches Layout mit fester Breite und Ausrichtung.
+Dazu benutzt es, wie im Standard Layout, zusätzliche DIV Tags (wrapper, container, inside).
 
 Siehe: [Readme](contao-layout-3x3/layout-3x3.html.md)
+
+## Verzeichnis contao-layout-3x3-grid-areas
+Layout Header-Main-Left-Right-Footer
+
+Es bildet das 3-Zeilen - 3 Spalten Layout nach als statisches Layout mit fester Breite und Ausrichtung.
+
+Der Unterschied zu contao-layout-3x3 ist, es kommt ohne die zusätzlichen DIV Tags aus (wrapper, container, inside).
+Dazu benutzt es grid-area Definitionen und arbeitet mit grid-template-columns, grid-template-rows usw.
+
+Siehe: [Readme](contao-layout-3x3-grid-areas/layout-3x3-grid-areas.html.md)
+
