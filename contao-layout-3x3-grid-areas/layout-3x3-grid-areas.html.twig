@@ -1,0 +1,121 @@
+{% extends "@Contao/page/layout.html.twig" %}
+
+{%- set body_attributes = attrs()
+    .setAttribute('id', 'wrapper')
+    .mergeWith(body_attributes|default)
+-%}
+
+{% block end_of_head %}
+    {{ parent() }}
+    <style{{ attrs().setIfExists('nonce', csp_nonce('style-src')) }}>
+    /* Mobile Styles */
+    #wrapper {
+        display: grid;
+        grid-template-areas:
+            "head"
+            "left"
+            "main"
+            "right"
+            "foot";
+        min-height: 100vh;
+    }
+
+    #wrapper > header,
+    footer {
+        display: flex;
+        align-items: center;
+    }
+
+    header {
+        grid-area: head;
+    }
+
+    #left-side {
+        grid-area: left;
+    }
+
+    main {
+        grid-area: main;
+    }
+
+    #right-side {
+        grid-area: right;
+    }
+
+    footer {
+        grid-area: foot;
+    }
+
+    /* Tablet styles */
+    @media screen and (min-width: 500px) {
+        #wrapper {
+            grid-template-columns: 0.5fr 1fr;
+            grid-template-rows: 100px 1fr 1fr 100px;
+            grid-template-areas:
+            "head head"
+            "left main"
+            "right main"
+            "foot foot";
+        }
+    }
+
+    /* laptop and desktop styles */
+    @media screen and (min-width: 960px) {
+        #wrapper {
+            grid-template-columns: 200px 1fr 200px;
+            grid-template-areas:
+                "head head head"
+                "left main right"
+                "left main right"
+                "foot foot foot";
+            width: 1024px;
+            margin: 0 auto;
+        }
+    }
+    </style>
+    <link rel="stylesheet" href="{{ asset('layout-grid-areas.css', 'contao_vfs.files') }}">
+    <link rel="stylesheet" href="{{ asset('your_own.css', 'contao_vfs.files') }}">
+    {# <script src="{{ asset('js/jquery.js', 'contao-components/jquery') }}"></script> #}
+{% endblock %}
+
+{% block body %}
+    {{ parent() }}
+    {# {{ include('@Contao/j_accordion.html.twig') }} #}
+    {# {{ include('@Contao/j_colorbox.html.twig') }}  #}
+    {# {{ include('@Contao/j_tablesort.html.twig') }} #}
+
+    {# {{ include('@Contao/js_slider.html.twig') }} #}
+    {# {{ include('@Contao/js_autofocus') }} #}
+{% endblock %}
+
+{% block body_content %}
+
+    {% slot header %}
+    <header id="header">
+        {{ slot() }}
+    </header>
+    {% endslot %}
+
+    {% slot main %}
+    <main id="main">
+        {{ slot() }}
+    </main>
+    {% endslot %}
+    {% slot left %}
+    <aside id="left-side">
+        {{ slot() }}
+    </aside>
+    {% endslot %}
+    {% slot right %}
+    <aside id="right-side">
+        {{ slot() }}
+    </aside>
+    {% endslot %}
+
+    {% slot footer %}
+    <footer id="footer">
+        {{ slot() }}
+    </footer>
+    {% endslot %}
+
+{% endblock %}

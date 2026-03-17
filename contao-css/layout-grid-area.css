@@ -1,0 +1,44 @@
+/* Resets */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Base Style */
+body {
+  color: white;
+  font-family: "Open Sans", sans-serif;
+  font-size: 1.5rem;
+}
+
+#wrapper > * {
+  padding: 1rem;
+}
+
+header {
+  background-color: #251947;
+  border: 4px solid #6f35f1;
+}
+
+#left-side {
+  background-color: #414819;
+  border: 4px solid #859433;
+}
+
+main {
+  background-color: #461947;
+  border: 4px solid #923394;
+}
+
+#right-side {
+  background-color: #1b4b40;
+  border: 4px solid #369680;
+}
+
+footer {
+  background-color: #251947;
+  border: 4px solid #6f35f1;
+}
