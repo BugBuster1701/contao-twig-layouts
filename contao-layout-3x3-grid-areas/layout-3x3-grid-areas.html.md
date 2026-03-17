@@ -10,7 +10,7 @@ Die "layout-grid-areas.css" ist auf GitHub im Verzeichnis contao-css zu finden, 
 
 Im Twig sind einige Zeilen auskommentiert. Wer was davon braucht kann das dann aktivieren, einfach `{#` und `#}` entfernen.
 
-**Hinweis:** Noch nicht getestet und auch noch nicht ganz fertig.
+**Hinweis:** Nur grob getestet.
 ```
 <html>
 <head>
