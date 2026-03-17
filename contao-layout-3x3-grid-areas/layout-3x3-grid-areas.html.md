@@ -11,6 +11,10 @@ Die "layout-grid-areas.css" ist auf GitHub im Verzeichnis contao-css zu finden, 
 Im Twig sind einige Zeilen auskommentiert. Wer was davon braucht kann das dann aktivieren, einfach `{#` und `#}` entfernen.
 
 **Hinweis:** Nur grob getestet.
+
+TWIG Datei ist hier abgelegt als [layout-3x3-grid-areas.html.twig](./layout-3x3-grid-areas.html.twig "layout-3x3-grid-areas.html.twig")
+
+Generiertes HTML:
 ```
 <html>
 <head>
