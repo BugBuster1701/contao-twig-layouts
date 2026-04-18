@@ -13,12 +13,12 @@
 
 {% block body %}
     {{ parent() }}
-    {{ include('@Contao/j_accordion.html.twig') }}
-    {{ include('@Contao/j_colorbox.html.twig') }}
-    {{ include('@Contao/j_tablesort.html.twig') }}
+    {{ include('@Contao/j_accordion') }}
+    {{ include('@Contao/j_colorbox') }}
+    {{ include('@Contao/j_tablesort') }}
 
-    {{ include('@Contao/js_slider.html.twig') }}
-    {{ include('@Contao/js_autofocus.html.twig') }}
+    {{ include('@Contao/js_slider') }}
+    {{ include('@Contao/js_autofocus') }}
 {% endblock %}
 
 {% block body_content %}
